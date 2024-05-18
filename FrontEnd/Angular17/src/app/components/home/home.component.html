@@ -1,0 +1,102 @@
+<!-- Header Section -->
+<div class="header">
+  <h1>Welcome to my ISP page !!!</h1>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+  <!-- Left Panel for Search and List -->
+  <div class="left-panel">
+      <!-- Search Input -->
+      <div class="left-search">
+          <div class="input-group rounded">
+              <input 
+                  type="text" 
+                  class="form-control" 
+                  [(ngModel)]="searchName" 
+                  placeholder="Search by name" 
+                  (keyup.enter)="onSearchChange()"
+              >
+              <span class="input-group-text border-0" id="search-addon">
+                  <i class="fas fa-search"></i>
+              </span>
+          </div>
+      </div>
+      <!-- ISP List Display -->
+      <div class="list-disp">
+          @for (ISP of filteredISPs; track filteredISPs) {
+              <button 
+                  type="button" 
+                  class="btn btn-outline-success" 
+                  (click)="onButtonClick(ISP)"
+              >
+                  {{ISP.name}}
+              </button>
+          }
+      </div>
+      <!-- Footer with Sort Buttons -->
+      <div class="left-footer">
+          <button 
+              mat-flat-button 
+              color="light" 
+              type="button" 
+              (click)="sortFilteredISPs('price')"
+          >
+              Sort by Price
+          </button>
+          <button 
+              mat-flat-button 
+              color="light" 
+              type="button" 
+              (click)="sortFilteredISPs('rating')"
+          >
+              Sort by Rating
+          </button>
+      </div>
+  </div>
+
+  <!-- Right Panel for Selected ISP Details -->
+  <div class="right-panel">
+      <div class="right-top">
+          <!-- Selected ISP Image -->
+          <div class="rt-image">
+              <div class="card mb-3 container" *ngIf="selectedISP">
+                  <img 
+                      class="cardimg-top" 
+                      [src]="selectedISP.image" 
+                      alt="Card image cap"
+                  >
+              </div>
+          </div>
+          <!-- Selected ISP Information -->
+          <div class="rt-card container">
+              <ul class="list-group" *ngIf="selectedISP">
+                  <li class="list-group-item active">{{selectedISP.name}}</li>
+                  <li class="list-group-item">{{selectedISP.max_speed}}</li>
+                  <li class="list-group-item">{{selectedISP.lowest_price}}</li>
+                  <li class="list-group-item">{{selectedISP.contact_no}}</li>
+                  <li class="list-group-item">{{selectedISP.email}}</li>
+              </ul>
+          </div>
+      </div>
+      <!-- Ratings and Description Section -->
+      <div class="right-bottom">
+          <div class="ratings" *ngIf="selectedISP">
+              <h1>Ratings:</h1>
+              <app-ratings 
+                  [readonly]="isReadonly" 
+                  [selected]="selectedISP.rating"
+              ></app-ratings>
+          </div>
+          <div class="description" *ngIf="selectedISP">
+              <app-card [longText]="selectedISP.description"></app-card>
+          </div>
+          <!-- Footer with Action Buttons -->
+          <div class="right-footer">
+              <button mat-flat-button color="accent">Link</button>
+              <button mat-flat-button color="accent">Share</button>
+              <button mat-flat-button color="accent">Download</button>
+          </div>
+      </div>
+  </div>
+</div>
