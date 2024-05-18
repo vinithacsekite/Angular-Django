@@ -1,0 +1,113 @@
+/* Header styles */
+.header {
+    border-style: double;
+    height: 10%;
+}
+
+/* Main container styles */
+.main {
+    display: flex;
+    height: calc(100vh - 10%);
+}
+
+/* Left panel styles */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: gainsboro;
+    color: black;
+}
+
+/* Left panel search box styles */
+.left-search {
+    margin-bottom: auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f0f0f0;
+    width: 100%;
+}
+
+/* List display styles */
+.list-disp {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: auto;
+}
+
+/* Left panel footer styles */
+.left-footer {
+    margin-top: auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+/* Right panel styles */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background-color: grey;
+    height: 100%;
+}
+
+/* Right panel top section styles */
+.right-top {
+    flex: 30%;
+    overflow: auto;
+    display: flex;
+    height: 100%;
+}
+
+/* Right top card styles */
+.rt-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Right top image styles */
+.rt-image {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Right panel bottom section styles */
+.right-bottom {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* Description section styles */
+.description {
+    padding: 1%;
+}
+
+/* Right footer styles */
+.right-footer {
+    margin-top: auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border-width: 1;
+}
+
+/* Card image styles */
+.cardimg-top {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+}
+
+/* Display color utility class */
+.disp-color {
+    color: black;
+}
